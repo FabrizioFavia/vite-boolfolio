@@ -2,7 +2,7 @@
 import axios from 'axios'
 
 export default {
-    name: 'App_projectCard',
+    name: 'App_projects',
     data() {
         return {
             api_path: 'http://127.0.0.1:8000/api/projects',
@@ -74,7 +74,7 @@ export default {
 
 <template>
     <div class="contentContainer">
-        <h1>Projects</h1>
+        <h1 class="mt-5">Projects</h1>
         <div v-if="this.loading">caricamento</div>
     </div>
     <div class="contentContainer d-flex flex-wrap justify-content-between">
@@ -89,10 +89,10 @@ export default {
         </div>
     </div>
     <div class="contentContainer">
-        <div class="btn btn-primary" @click="this.prevPage()">Precedente</div>
+        <div class="btn btn-primary mt-4 me-2" @click="this.prevPage()">Precedente</div>
         <div class="btn btn-primary mt-4 me-2" @click="this.getProjects(pageNumber)"
             v-for="pageNumber in projects.last_page ">{{ pageNumber }}</div>
-        <div class="btn btn-primary" @click="this.nextPage()">Successiva</div>
+        <div class="btn btn-primary mt-4 me-2" @click="this.nextPage()">Successiva</div>
     </div>
 </template>
 
